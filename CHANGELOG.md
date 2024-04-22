@@ -2,7 +2,8 @@
 
 ## UNRELEASED
 
-- Verify that shortname is not already in use by another active site when saving a site.
+* Verify that shortname is not already in use by another active site when saving a site.
+* For safety, disable autocomplete of dashboard settings.
 
 ## 2.12.0 (2023-09-08)
 

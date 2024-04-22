@@ -31,10 +31,10 @@ module.exports = async function(options) {
   // passed to initialize Apostrophe. This argument is typically
   // used to prevent `argv` from being reused.
 
-  self.getSiteApos = async function(siteOrId, options) {
+  self.getSiteApos = async function(siteOrId, options, { published } = {}) {
     let site = siteOrId;
     if ((typeof siteOrId) === 'string') {
-      site = await dashboard.docs.db.findOne({
+      const query = {
         type: 'site',
         _id: siteOrId,
         // For speed and because they can have their own users and permissions
@@ -44,9 +44,12 @@ module.exports = async function(options) {
         //
         // However, we do make sure the site is published and not in the trash,
         // to keep things intuitive for the superadmin.
-        trash: { $ne: true },
-        published: true
-      });
+        trash: { $ne: true }
+      };
+      if (published !== null) {
+        query.published = true;
+      }
+      site = await dashboard.docs.db.findOne(query);
     }
     return Promise.promisify(body)();
     function body(callback) {
