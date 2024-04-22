@@ -1,6 +1,6 @@
 # Changelog
 
-## UNRELEASED
+## 2.12.1 (2024-04-22)
 
 * Verify that shortname is not already in use by another active site when saving a site.
 * For safety, disable autocomplete of dashboard settings.
