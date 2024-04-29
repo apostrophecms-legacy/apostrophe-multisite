@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.12.2 (2024-04-29)
+
+* Removed the `autocomplete=off` change, which was redundant to code already existing in A2 core and also
+ineffective in current browsers, in favor of a new change in A2 core.
+
 ## 2.12.1 (2024-04-22)
 
 * Verify that shortname is not already in use by another active site when saving a site.
