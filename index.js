@@ -902,11 +902,13 @@ module.exports = async function(options) {
     const req = dashboard.tasks.getReq();
     let sites;
     if (options.temporary) {
+      const _id = dashboard.utils.generateId();
       const site = {
         title: '** Temporary for Command Line Task',
         published: false,
         trash: false,
-        _id: dashboard.utils.generateId()
+        shortName: _id,
+        _id
       };
       if (argv.theme) {
         site.theme = argv.theme;

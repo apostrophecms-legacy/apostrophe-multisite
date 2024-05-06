@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.12.3 (2024-05-06)
+
+* Fix potential regression caused by 2.12.1: guarantee that a temporary site always has a unique `shortName`.
+
 ## 2.12.2 (2024-04-29)
 
 * Removed the `autocomplete=off` change, which was redundant to code already existing in A2 core and also
