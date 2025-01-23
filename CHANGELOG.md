@@ -2,7 +2,7 @@
 
 ## 2.12.4 (2025-01-23)
 
-* Fix an old bug that prevented `apostrophe-assets` project level code from working correctly.
+* Fix an old bug that prevented `apostrophe-assets` project level code from working correctly in the dashboard.
 
 ## 2.12.3 (2024-05-06)
 
