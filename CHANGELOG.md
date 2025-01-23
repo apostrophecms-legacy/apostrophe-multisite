@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.12.4 (2025-01-23)
+
+* Fix an old bug that prevented `apostrophe-assets` project level code from working correctly.
+
 ## 2.12.3 (2024-05-06)
 
 * Fix potential regression caused by 2.12.1: guarantee that a temporary site always has a unique `shortName`.
