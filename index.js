@@ -701,17 +701,22 @@ module.exports = async function(options) {
 
           modules: {
 
-            'apostrophe-assets': {
+            'apostrophe-assets-multisite-patch': {
               construct: function(self, options) {
-                // Make it possible to disable the asset build so it doesn't
-                // take up time and change the asset generation if we're just
-                // running a task for another site, a situation in which we
-                // only need the dashboard in order to access the db containing
-                // that site
-                if (options.disabled) {
-                  self.afterInit = function() {};
-                  self.determineGenerationAndExtract = function() {};
-                }
+                self.on('apostrophe:modulesReady', 'addDisabledOption', () => {
+                  // Make it possible to disable the asset build so it doesn't
+                  // take up time and change the asset generation if we're just
+                  // running a task for another site, a situation in which we
+                  // only need the dashboard in order to access the db containing
+                  // that site.
+                  //
+                  // (We have to do this via a monkeypatch in order to leave the project
+                  // level of apostrophe-assets open for the project code to implement.)
+                  if (self.apos.assets.options.disabled) {
+                    self.apos.assets.afterInit = function() {};
+                    self.apos.assets.determineGenerationAndExtract = function() {};
+                  }
+                });
               }
             },
 
