@@ -1,3 +1,7 @@
+# ⛔️ **DEPRECATED** — do not use for new projects
+
+See [our current docs](https://docs.apostrophecms.org/)
+
 # apostrophe-multisite
 
 [![CircleCI](https://circleci.com/gh/apostrophecms/apostrophe-multisite.svg?style=svg)](https://circleci.com/gh/apostrophecms/apostrophe-multisite)
